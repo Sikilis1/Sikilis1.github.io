@@ -705,8 +705,8 @@ body {
 
 .repo-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(139, 69, 19, 0.2);
-  border-color: rgba(139, 69, 19, 0.4);
+  box-shadow: 0 12px 28px rgba(218, 165, 32, 0.2);
+  border-color: rgba(218, 165, 32, 0.4);
 }
 
 .repo-header {
