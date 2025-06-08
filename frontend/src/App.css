@@ -511,8 +511,8 @@ body {
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
-  border-color: rgba(139, 69, 19, 0.5);
+  box-shadow: 0 20px 40px rgba(218, 165, 32, 0.3);
+  border-color: rgba(218, 165, 32, 0.5);
 }
 
 .project-image {
