@@ -128,7 +128,7 @@ body {
   padding: 1rem 1rem;
   background: none;
   border: none;
-  color: #654321;
+  color: #b8b6b3;
   font-family: 'Kalam', cursive;
   font-size: 1rem;
   font-weight: 600;
@@ -148,7 +148,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
   transition: left 0.5s ease;
 }
 
@@ -157,18 +157,18 @@ body {
 }
 
 .nav-item:hover {
-  background: rgba(139, 69, 19, 0.1);
-  color: #8b4513;
+  background: rgba(218, 165, 32, 0.1);
+  color: #daa520;
   transform: translateX(5px);
-  border-color: rgba(139, 69, 19, 0.3);
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+  border-color: rgba(218, 165, 32, 0.3);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
 }
 
 .nav-item-active {
-  background: rgba(139, 69, 19, 0.15);
-  color: #8b4513;
-  border-color: rgba(139, 69, 19, 0.4);
-  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.3);
+  background: rgba(218, 165, 32, 0.15);
+  color: #daa520;
+  border-color: rgba(218, 165, 32, 0.4);
+  box-shadow: 0 6px 16px rgba(218, 165, 32, 0.3);
 }
 
 .nav-icon {
