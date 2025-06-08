@@ -326,7 +326,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(250, 248, 245, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(10, 10, 11, 0.7) 0%, rgba(26, 26, 31, 0.5) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -338,19 +338,19 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 4rem;
   font-weight: 700;
-  color: #8b4513;
+  color: #daa520;
   margin-bottom: 0.8rem;
-  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 2px;
 }
 
 .hero-subtitle {
   font-family: 'Caveat', cursive;
   font-size: 1.3rem;
-  color: #654321;
+  color: #b8b6b3;
   font-weight: 600;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Content Body */
