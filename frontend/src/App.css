@@ -693,14 +693,14 @@ body {
 }
 
 .repo-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(20, 20, 25, 0.6);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(139, 69, 19, 0.2);
+  border: 2px solid rgba(218, 165, 32, 0.2);
   border-radius: 15px;
   padding: 1.5rem;
   transition: all 0.3s ease;
   height: fit-content;
-  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.1);
+  box-shadow: 0 6px 16px rgba(218, 165, 32, 0.1);
 }
 
 .repo-card:hover {
