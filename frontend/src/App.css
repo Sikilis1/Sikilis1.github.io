@@ -199,7 +199,7 @@ body {
 
 /* Sidebar Footer */
 .sidebar-footer {
-  border-top: 2px solid rgba(139, 69, 19, 0.3);
+  border-top: 2px solid rgba(218, 165, 32, 0.3);
   padding-top: 1.5rem;
   text-align: center;
 }
@@ -217,10 +217,10 @@ body {
   justify-content: center;
   width: 35px;
   height: 35px;
-  background: rgba(139, 69, 19, 0.1);
-  border: 2px solid rgba(139, 69, 19, 0.3);
+  background: rgba(218, 165, 32, 0.1);
+  border: 2px solid rgba(218, 165, 32, 0.3);
   border-radius: 8px;
-  color: #8b4513;
+  color: #daa520;
   text-decoration: none;
   font-size: 0.7rem;
   font-weight: 700;
@@ -229,31 +229,31 @@ body {
 }
 
 .social-link:hover {
-  background: rgba(139, 69, 19, 0.2);
+  background: rgba(218, 165, 32, 0.2);
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 6px 16px rgba(218, 165, 32, 0.3);
 }
 
 .contact-btn {
   width: 100%;
   padding: 0.8rem 1rem;
-  background: linear-gradient(45deg, #8b4513, #a0522d);
+  background: linear-gradient(45deg, #daa520, #b8860b);
   border: none;
   border-radius: 25px;
-  color: white;
+  color: #0a0a0b;
   font-family: 'Kalam', cursive;
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
 }
 
 .contact-btn:hover {
-  background: linear-gradient(45deg, #a0522d, #8b4513);
+  background: linear-gradient(45deg, #b8860b, #daa520);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.4);
 }
 
 /* Mobile Menu */
