@@ -768,7 +768,7 @@ body {
 }
 
 .repo-link {
-  color: #8b4513;
+  color: #daa520;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -778,8 +778,8 @@ body {
 }
 
 .repo-link:hover {
-  color: #654321;
-  text-shadow: 0 0 8px rgba(139, 69, 19, 0.5);
+  color: #b8860b;
+  text-shadow: 0 0 8px rgba(218, 165, 32, 0.5);
 }
 
 /* Loading */
