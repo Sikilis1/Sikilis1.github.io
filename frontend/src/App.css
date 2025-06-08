@@ -578,9 +578,9 @@ body {
 }
 
 .back-btn {
-  background: rgba(139, 69, 19, 0.1);
-  border: 2px solid rgba(139, 69, 19, 0.3);
-  color: #8b4513;
+  background: rgba(218, 165, 32, 0.1);
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  color: #daa520;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   font-family: 'Kalam', cursive;
