@@ -7,7 +7,7 @@ const CherryBlossoms = () => {
   const [petals, setPetals] = useState([]);
 
   useEffect(() => {
-    const petalCount = 20;
+    const petalCount = 15;
     const newPetals = [];
     
     for (let i = 0; i < petalCount; i++) {
@@ -47,16 +47,48 @@ const CherryBlossoms = () => {
 // Sidebar Navigation Component
 const Sidebar = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const menuItems = [
-    { id: 'about', label: 'About Me', icon: '⚔️' },
-    { id: 'skills', label: 'Skills', icon: '🎯' },
-    { id: 'projects', label: 'Projects', icon: '🏯' },
-    { id: 'github', label: 'GitHub', icon: '📜' }
+    { 
+      id: 'about', 
+      label: 'About Me', 
+      icon: (
+        <div className="nav-icon-img">
+          <img src="https://images.pexels.com/photos/31729556/pexels-photo-31729556.jpeg" alt="About" />
+        </div>
+      )
+    },
+    { 
+      id: 'skills', 
+      label: 'Skills', 
+      icon: (
+        <div className="nav-icon-img">
+          <img src="https://images.pexels.com/photos/7780214/pexels-photo-7780214.jpeg" alt="Skills" />
+        </div>
+      )
+    },
+    { 
+      id: 'projects', 
+      label: 'Projects', 
+      icon: (
+        <div className="nav-icon-img">
+          <img src="https://images.unsplash.com/photo-1685279576959-e710bffbfe05" alt="Projects" />
+        </div>
+      )
+    },
+    { 
+      id: 'github', 
+      label: 'GitHub', 
+      icon: (
+        <div className="nav-icon-img">
+          <img src="https://images.unsplash.com/photo-1652619136719-2ddf8e849a71" alt="GitHub" />
+        </div>
+      )
+    }
   ];
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/sathariels', icon: '⚡' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nithilan-kumaran', icon: '🔗' },
-    { name: 'Medium', url: 'https://medium.com/@Sathariels', icon: '📝' }
+    { name: 'GitHub', url: 'https://github.com/sathariels', icon: 'GH' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/nithilan-kumaran', icon: 'LI' },
+    { name: 'Medium', url: 'https://medium.com/@Sathariels', icon: 'MD' }
   ];
 
   return (
@@ -72,8 +104,9 @@ const Sidebar = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpe
       {/* Sidebar */}
       <div className={`sidebar ${isMobileMenuOpen ? 'sidebar-mobile-open' : ''}`}>
         <div className="sidebar-header">
-          <h1 className="name-title">Nithilan Kumaran</h1>
-          <p className="title-subtitle">Software Engineer</p>
+          <h1 className="name-title">NITHILAN</h1>
+          <h2 className="name-subtitle">KUMARAN</h2>
+          <p className="title-subtitle">SOFTWARE ENGINEER</p>
         </div>
 
         <nav className="sidebar-nav">
@@ -108,7 +141,7 @@ const Sidebar = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpe
             ))}
           </div>
           <button className="contact-btn">
-            Contact Me
+            CONTACT
           </button>
         </div>
       </div>
@@ -135,8 +168,8 @@ const AboutMe = () => (
           className="hero-bg"
         />
         <div className="hero-overlay">
-          <h2 className="section-title">About Me</h2>
-          <p className="hero-subtitle">The Path of the Software Samurai</p>
+          <h2 className="section-title">ABOUT ME</h2>
+          <p className="hero-subtitle">THE PATH OF THE SOFTWARE SAMURAI</p>
         </div>
       </div>
     </div>
@@ -165,15 +198,15 @@ const AboutMe = () => (
         
         <div className="about-stats">
           <div className="stat-card">
-            <h3>Current Role</h3>
+            <h3>CURRENT ROLE</h3>
             <p>Enterprise Business Intern at Carrier</p>
           </div>
           <div className="stat-card">
-            <h3>Education</h3>
+            <h3>EDUCATION</h3>
             <p>Computer Engineering at UW-Madison</p>
           </div>
           <div className="stat-card">
-            <h3>Passion</h3>
+            <h3>PASSION</h3>
             <p>Game Development & Interactive Experiences</p>
           </div>
         </div>
@@ -185,11 +218,11 @@ const AboutMe = () => (
 // Skills Component
 const Skills = () => {
   const skillCategories = {
-    'Programming Languages': ['C++', 'Python', 'Java', 'C#', 'C', 'Kotlin', 'Lua'],
-    'Game Development': ['Unreal Engine', 'Unity', 'Godot', 'Roblox Studio'],
-    'Web Technologies': ['React', 'HTML', 'CSS', 'PHP'],
-    'Tools & Technologies': ['Git', 'VS Code', 'JetBrains', 'Blender', 'Photoshop', 'SAP'],
-    'Methodologies': ['Agile', 'Jira', 'Bash']
+    'PROGRAMMING LANGUAGES': ['C++', 'Python', 'Java', 'C#', 'C', 'Kotlin', 'Lua'],
+    'GAME DEVELOPMENT': ['Unreal Engine', 'Unity', 'Godot', 'Roblox Studio'],
+    'WEB TECHNOLOGIES': ['React', 'HTML', 'CSS', 'PHP'],
+    'TOOLS & TECHNOLOGIES': ['Git', 'VS Code', 'JetBrains', 'Blender', 'Photoshop', 'SAP'],
+    'METHODOLOGIES': ['Agile', 'Jira', 'Bash']
   };
 
   return (
@@ -202,8 +235,8 @@ const Skills = () => {
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">Skills & Abilities</h2>
-            <p className="hero-subtitle">Arsenal of a Digital Warrior</p>
+            <h2 className="section-title">SKILLS & ABILITIES</h2>
+            <p className="hero-subtitle">ARSENAL OF A DIGITAL WARRIOR</p>
           </div>
         </div>
       </div>
@@ -239,7 +272,7 @@ const Projects = () => {
       description: "Space Knights is an upcoming Roblox game launching in late 2025, and I had the opportunity to develop the in-game item shop where players can purchase weapons of varying rarities. Using Roblox Studio, I designed the shop's user interface and experience, uploaded hundreds of animations, and implemented key features using Lua—including a search function powered by the Levenshtein distance algorithm to improve usability.",
       technologies: ["Lua", "Roblox", "User Interface", "User Experience"],
       demoLink: "https://medium.com/@Sathariels/space-knights-items-shop-d3bd2bae76d1",
-      image: "https://images.unsplash.com/photo-1493514789931-586cb221d7a7"
+      image: "https://images.pexels.com/photos/8751515/pexels-photo-8751515.jpeg"
     },
     {
       id: 2,
@@ -247,14 +280,14 @@ const Projects = () => {
       description: "As the Executive Director of Management for One Suryan, a student-led organization focused on empowering the global South Asian community, I led strategic operations and oversaw a diverse, creative team. One of my key contributions was designing and developing the organization's website using HTML, CSS, and PHP.",
       technologies: ["HTML", "CSS", "PHP"],
       demoLink: "https://medium.com/@Sathariels/one-suryan-website-creation-project-4efac8204e6b",
-      image: "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg"
+      image: "https://images.unsplash.com/photo-1685279576959-e710bffbfe05"
     },
     {
       id: 3,
       title: "2D Game Engine",
       description: "A custom-built 2D game engine written in C++, designed from the ground up to handle core gameplay systems such as rendering, input handling, entity management, and real-time collision detection.",
       technologies: ["C++", "Physics", "Game Engine"],
-      image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186"
+      image: "https://images.unsplash.com/photo-1652619136719-2ddf8e849a71"
     }
   ];
 
@@ -267,7 +300,7 @@ const Projects = () => {
             className="back-btn"
             onClick={() => setSelectedProject(null)}
           >
-            ← Back to Projects
+            ← BACK TO PROJECTS
           </button>
           
           <div className="project-header">
@@ -291,7 +324,7 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="demo-link"
               >
-                View Project Details →
+                VIEW PROJECT DETAILS →
               </a>
             )}
           </div>
@@ -310,34 +343,36 @@ const Projects = () => {
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">Projects</h2>
-            <p className="hero-subtitle">Legendary Creations</p>
+            <h2 className="section-title">PROJECTS</h2>
+            <p className="hero-subtitle">LEGENDARY CREATIONS</p>
           </div>
         </div>
       </div>
       
       <div className="content-body">
-        <div className="projects-grid">
-          {projects.map(project => (
-            <div 
-              key={project.id} 
-              className="project-card"
-              onClick={() => setSelectedProject(project.id)}
-            >
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-              </div>
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <p>{project.description.substring(0, 120)}...</p>
-                <div className="project-tech">
-                  {project.technologies.slice(0, 3).map(tech => (
-                    <span key={tech} className="tech-tag">{tech}</span>
-                  ))}
+        <div className="projects-container">
+          <div className="projects-grid">
+            {projects.map(project => (
+              <div 
+                key={project.id} 
+                className="project-card"
+                onClick={() => setSelectedProject(project.id)}
+              >
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                </div>
+                <div className="project-info">
+                  <h3>{project.title}</h3>
+                  <p>{project.description.substring(0, 100)}...</p>
+                  <div className="project-tech">
+                    {project.technologies.slice(0, 3).map(tech => (
+                      <span key={tech} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -369,8 +404,10 @@ const GitHub = () => {
     return (
       <div className="content-section">
         <div className="loading-container">
-          <div className="loading-spinner">⚔️</div>
-          <p>Loading repositories...</p>
+          <div className="loading-spinner">
+            <img src="https://images.pexels.com/photos/31729556/pexels-photo-31729556.jpeg" alt="Loading" />
+          </div>
+          <p>LOADING REPOSITORIES...</p>
         </div>
       </div>
     );
@@ -386,45 +423,47 @@ const GitHub = () => {
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">GitHub Repositories</h2>
-            <p className="hero-subtitle">Code Chronicles</p>
+            <h2 className="section-title">GITHUB REPOSITORIES</h2>
+            <p className="hero-subtitle">CODE CHRONICLES</p>
           </div>
         </div>
       </div>
       
       <div className="content-body">
-        <div className="repos-grid">
-          {repos.map(repo => (
-            <div key={repo.id} className="repo-card">
-              <div className="repo-header">
-                <h3 className="repo-name">{repo.name}</h3>
-                <div className="repo-stats">
-                  <span className="stat">⭐ {repo.stargazers_count}</span>
-                  <span className="stat">🍴 {repo.forks_count}</span>
+        <div className="repos-container">
+          <div className="repos-grid">
+            {repos.map(repo => (
+              <div key={repo.id} className="repo-card">
+                <div className="repo-header">
+                  <h3 className="repo-name">{repo.name}</h3>
+                  <div className="repo-stats">
+                    <span className="stat">★ {repo.stargazers_count}</span>
+                    <span className="stat">⑃ {repo.forks_count}</span>
+                  </div>
+                </div>
+                
+                <p className="repo-description">
+                  {repo.description || 'No description available'}
+                </p>
+                
+                <div className="repo-footer">
+                  <div className="repo-language">
+                    {repo.language && (
+                      <span className="language-tag">{repo.language}</span>
+                    )}
+                  </div>
+                  <a 
+                    href={repo.html_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="repo-link"
+                  >
+                    VIEW CODE →
+                  </a>
                 </div>
               </div>
-              
-              <p className="repo-description">
-                {repo.description || 'No description available'}
-              </p>
-              
-              <div className="repo-footer">
-                <div className="repo-language">
-                  {repo.language && (
-                    <span className="language-tag">{repo.language}</span>
-                  )}
-                </div>
-                <a 
-                  href={repo.html_url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="repo-link"
-                >
-                  View Code →
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
