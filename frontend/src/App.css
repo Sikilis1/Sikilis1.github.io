@@ -662,8 +662,8 @@ body {
 
 .demo-link {
   display: inline-block;
-  background: linear-gradient(45deg, #8b4513, #a0522d);
-  color: white;
+  background: linear-gradient(45deg, #daa520, #b8860b);
+  color: #0a0a0b;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
@@ -672,7 +672,7 @@ body {
   font-family: 'Kalam', cursive;
   font-size: 1rem;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
 }
 
 .demo-link:hover {
