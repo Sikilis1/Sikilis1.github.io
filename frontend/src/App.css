@@ -394,24 +394,24 @@ body {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(20, 20, 25, 0.6);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(139, 69, 19, 0.2);
+  border: 2px solid rgba(218, 165, 32, 0.2);
   border-radius: 15px;
   padding: 1.8rem;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 16px rgba(139, 69, 19, 0.1);
+  box-shadow: 0 6px 16px rgba(218, 165, 32, 0.1);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(139, 69, 19, 0.2);
-  border-color: rgba(139, 69, 19, 0.4);
+  box-shadow: 0 12px 28px rgba(218, 165, 32, 0.2);
+  border-color: rgba(218, 165, 32, 0.4);
 }
 
 .stat-card h3 {
-  color: #8b4513;
+  color: #daa520;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -420,7 +420,7 @@ body {
 }
 
 .stat-card p {
-  color: #654321;
+  color: #b8b6b3;
   font-size: 1rem;
   line-height: 1.5;
   font-family: 'Kalam', cursive;
