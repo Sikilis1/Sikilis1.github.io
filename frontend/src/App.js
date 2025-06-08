@@ -7,17 +7,17 @@ const CherryBlossoms = () => {
   const [petals, setPetals] = useState([]);
 
   useEffect(() => {
-    const petalCount = 15;
+    const petalCount = 35; // Increased for more visibility
     const newPetals = [];
     
     for (let i = 0; i < petalCount; i++) {
       newPetals.push({
         id: i,
         left: Math.random() * 100,
-        delay: Math.random() * 20,
-        duration: 15 + Math.random() * 10,
-        size: 0.5 + Math.random() * 0.8,
-        opacity: 0.3 + Math.random() * 0.4
+        delay: Math.random() * 15,
+        duration: 12 + Math.random() * 8,
+        size: 0.8 + Math.random() * 1.2, // Increased size
+        opacity: 0.6 + Math.random() * 0.4 // Increased opacity
       });
     }
     setPetals(newPetals);
@@ -104,9 +104,9 @@ const Sidebar = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpe
       {/* Sidebar */}
       <div className={`sidebar ${isMobileMenuOpen ? 'sidebar-mobile-open' : ''}`}>
         <div className="sidebar-header">
-          <h1 className="name-title">NITHILAN</h1>
-          <h2 className="name-subtitle">KUMARAN</h2>
-          <p className="title-subtitle">SOFTWARE ENGINEER</p>
+          <h1 className="name-title">Nithilan</h1>
+          <h2 className="name-subtitle">Kumaran</h2>
+          <p className="title-subtitle">Software Engineer</p>
         </div>
 
         <nav className="sidebar-nav">
@@ -141,7 +141,7 @@ const Sidebar = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpe
             ))}
           </div>
           <button className="contact-btn">
-            CONTACT
+            Contact
           </button>
         </div>
       </div>
@@ -168,8 +168,8 @@ const AboutMe = () => (
           className="hero-bg"
         />
         <div className="hero-overlay">
-          <h2 className="section-title">ABOUT ME</h2>
-          <p className="hero-subtitle">THE PATH OF THE SOFTWARE SAMURAI</p>
+          <h2 className="section-title">About Me</h2>
+          <p className="hero-subtitle">The Path of the Software Samurai</p>
         </div>
       </div>
     </div>
@@ -198,15 +198,15 @@ const AboutMe = () => (
         
         <div className="about-stats">
           <div className="stat-card">
-            <h3>CURRENT ROLE</h3>
+            <h3>Current Role</h3>
             <p>Enterprise Business Intern at Carrier</p>
           </div>
           <div className="stat-card">
-            <h3>EDUCATION</h3>
+            <h3>Education</h3>
             <p>Computer Engineering at UW-Madison</p>
           </div>
           <div className="stat-card">
-            <h3>PASSION</h3>
+            <h3>Passion</h3>
             <p>Game Development & Interactive Experiences</p>
           </div>
         </div>
@@ -218,11 +218,11 @@ const AboutMe = () => (
 // Skills Component
 const Skills = () => {
   const skillCategories = {
-    'PROGRAMMING LANGUAGES': ['C++', 'Python', 'Java', 'C#', 'C', 'Kotlin', 'Lua'],
-    'GAME DEVELOPMENT': ['Unreal Engine', 'Unity', 'Godot', 'Roblox Studio'],
-    'WEB TECHNOLOGIES': ['React', 'HTML', 'CSS', 'PHP'],
-    'TOOLS & TECHNOLOGIES': ['Git', 'VS Code', 'JetBrains', 'Blender', 'Photoshop', 'SAP'],
-    'METHODOLOGIES': ['Agile', 'Jira', 'Bash']
+    'Programming Languages': ['C++', 'Python', 'Java', 'C#', 'C', 'Kotlin', 'Lua'],
+    'Game Development': ['Unreal Engine', 'Unity', 'Godot', 'Roblox Studio'],
+    'Web Technologies': ['React', 'HTML', 'CSS', 'PHP'],
+    'Tools & Technologies': ['Git', 'VS Code', 'JetBrains', 'Blender', 'Photoshop', 'SAP'],
+    'Methodologies': ['Agile', 'Jira', 'Bash']
   };
 
   return (
@@ -230,13 +230,13 @@ const Skills = () => {
       <div className="hero-section">
         <div className="hero-image">
           <img 
-            src="https://images.unsplash.com/photo-1528360983277-13d401cdc186" 
-            alt="Japanese alley"
+            src="https://images.unsplash.com/photo-1622544841811-2ae2d424b069" 
+            alt="Japanese art"
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">SKILLS & ABILITIES</h2>
-            <p className="hero-subtitle">ARSENAL OF A DIGITAL WARRIOR</p>
+            <h2 className="section-title">Skills & Abilities</h2>
+            <p className="hero-subtitle">Arsenal of a Digital Warrior</p>
           </div>
         </div>
       </div>
@@ -300,7 +300,7 @@ const Projects = () => {
             className="back-btn"
             onClick={() => setSelectedProject(null)}
           >
-            ← BACK TO PROJECTS
+            ← Back to Projects
           </button>
           
           <div className="project-header">
@@ -324,7 +324,7 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="demo-link"
               >
-                VIEW PROJECT DETAILS →
+                View Project Details →
               </a>
             )}
           </div>
@@ -338,13 +338,13 @@ const Projects = () => {
       <div className="hero-section">
         <div className="hero-image">
           <img 
-            src="https://images.unsplash.com/photo-1493514789931-586cb221d7a7" 
-            alt="Tokyo night"
+            src="https://images.pexels.com/photos/327483/pexels-photo-327483.jpeg" 
+            alt="Zen garden"
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">PROJECTS</h2>
-            <p className="hero-subtitle">LEGENDARY CREATIONS</p>
+            <h2 className="section-title">Projects</h2>
+            <p className="hero-subtitle">Legendary Creations</p>
           </div>
         </div>
       </div>
@@ -389,7 +389,10 @@ const GitHub = () => {
       try {
         const response = await fetch('https://api.github.com/users/sathariels/repos');
         const data = await response.json();
-        setRepos(data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)));
+        // Remove last 5 repos and show only the most recent ones
+        const sortedRepos = data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const filteredRepos = sortedRepos.slice(0, -5); // Remove last 5
+        setRepos(filteredRepos);
       } catch (error) {
         console.error('Error fetching repos:', error);
       } finally {
@@ -407,7 +410,7 @@ const GitHub = () => {
           <div className="loading-spinner">
             <img src="https://images.pexels.com/photos/31729556/pexels-photo-31729556.jpeg" alt="Loading" />
           </div>
-          <p>LOADING REPOSITORIES...</p>
+          <p>Loading repositories...</p>
         </div>
       </div>
     );
@@ -418,13 +421,13 @@ const GitHub = () => {
       <div className="hero-section">
         <div className="hero-image">
           <img 
-            src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg" 
-            alt="GitHub projects"
+            src="https://images.pexels.com/photos/54601/bamboo-damyang-sunshine-54601.jpeg" 
+            alt="Bamboo forest"
             className="hero-bg"
           />
           <div className="hero-overlay">
-            <h2 className="section-title">GITHUB REPOSITORIES</h2>
-            <p className="hero-subtitle">CODE CHRONICLES</p>
+            <h2 className="section-title">GitHub Repositories</h2>
+            <p className="hero-subtitle">Code Chronicles</p>
           </div>
         </div>
       </div>
@@ -458,7 +461,7 @@ const GitHub = () => {
                     rel="noopener noreferrer"
                     className="repo-link"
                   >
-                    VIEW CODE →
+                    View Code →
                   </a>
                 </div>
               </div>
