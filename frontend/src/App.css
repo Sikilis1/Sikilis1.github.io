@@ -593,9 +593,9 @@ body {
 }
 
 .back-btn:hover {
-  background: rgba(139, 69, 19, 0.2);
+  background: rgba(218, 165, 32, 0.2);
   transform: translateX(-5px);
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
 }
 
 .project-header {
