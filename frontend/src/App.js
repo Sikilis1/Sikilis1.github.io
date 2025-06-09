@@ -128,7 +128,10 @@ const ModernSidebar = ({ activeTab, setActiveTab, isMenuOpen, setIsMenuOpen }) =
               </div>
             </div>
             
-            <button className="contact-button">
+            <button 
+              className="contact-button"
+              onClick={() => window.location.href = 'mailto:nithilan.p.kumaran@gmail.com?subject=Portfolio Contact&body=Hi Nithilan, I visited your portfolio and would like to connect...'}
+            >
               CONTACT ME
             </button>
           </div>
