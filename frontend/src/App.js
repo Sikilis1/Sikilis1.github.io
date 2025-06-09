@@ -496,8 +496,6 @@ function App() {
 }
 
 export default App;
-
-// About Me Component
 const AboutMe = () => (
   <div className="content-section">
     <div className="hero-section">
