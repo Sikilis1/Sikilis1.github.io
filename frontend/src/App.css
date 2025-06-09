@@ -1,5 +1,17 @@
-/* Ghost of Tsushima Inspired Styles with Paintbrush Font and White Background */
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+/* Futuristic Portfolio - Ghost of Tsushima x Skyrim x One Piece Fusion */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root {
+  --primary-purple: #9d4edd;
+  --secondary-magenta: #c77dff;
+  --accent-pink: #e0aaff;
+  --light-purple: #f0d9ff;
+  --dark-purple: #7209b7;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(157, 78, 221, 0.2);
+  --glow-purple: 0 0 20px rgba(157, 78, 221, 0.4);
+  --glow-magenta: 0 0 15px rgba(199, 125, 255, 0.6);
+}
 
 * {
   margin: 0;
@@ -9,9 +21,25 @@
 
 body {
   font-family: 'Kalam', cursive;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #faf9ff 50%, #ffffff 100%);
   color: #2d2d2d;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(157, 78, 221, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(199, 125, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(224, 170, 255, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .App {
