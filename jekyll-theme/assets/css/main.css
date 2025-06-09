@@ -645,7 +645,7 @@ body {
 }
 
 .project-description {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid rgba(139, 69, 19, 0.2);
   border-radius: 15px;
   padding: 2rem;
