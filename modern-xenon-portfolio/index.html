@@ -1,0 +1,479 @@
+---
+layout: default
+---
+
+<div class="app-container">
+  <!-- Futuristic Particles -->
+  <div class="futuristic-particles" id="particles"></div>
+  
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-text">{{ site.author.name | upcase | split: ' ' | first }}</span>
+    </div>
+    
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+  </nav>
+
+  <!-- Dropdown Menu -->
+  <div class="dropdown-menu" id="dropdownMenu">
+    <div class="menu-content">
+      <div class="menu-header">
+        <h2>NAVIGATION</h2>
+      </div>
+      
+      <div class="menu-items">
+        <button class="menu-item item-active" data-section="about">
+          <div class="item-content">
+            <span class="item-label">About Me</span>
+            <span class="item-description">My journey and background</span>
+          </div>
+          <div class="item-arrow">→</div>
+        </button>
+        
+        <button class="menu-item" data-section="skills">
+          <div class="item-content">
+            <span class="item-label">Skills</span>
+            <span class="item-description">Technical expertise</span>
+          </div>
+          <div class="item-arrow">→</div>
+        </button>
+        
+        <button class="menu-item" data-section="projects">
+          <div class="item-content">
+            <span class="item-label">Projects</span>
+            <span class="item-description">Featured work</span>
+          </div>
+          <div class="item-arrow">→</div>
+        </button>
+        
+        <button class="menu-item" data-section="github">
+          <div class="item-content">
+            <span class="item-label">GitHub</span>
+            <span class="item-description">Code repositories</span>
+          </div>
+          <div class="item-arrow">→</div>
+        </button>
+      </div>
+
+      <div class="menu-footer">
+        <div class="social-section">
+          <h3>CONNECT</h3>
+          <div class="social-links">
+            {% if site.social.github %}
+            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              GH
+            </a>
+            {% endif %}
+            
+            {% if site.social.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+              LI
+            </a>
+            {% endif %}
+            
+            {% if site.social.medium %}
+            <a href="https://medium.com/@{{ site.social.medium }}" target="_blank" rel="noopener noreferrer" class="social-link" title="Medium">
+              MD
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        
+        <button class="contact-button" onclick="contactMe()">
+          CONTACT ME
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- About Section (Hero) -->
+    <section id="about" class="content-section active">
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              STEP INTO<br />
+              <span class="highlight">THE FUTURE</span>
+            </h1>
+            <p class="hero-description">
+              {{ site.author.bio }}
+            </p>
+            <button class="learn-more-btn" onclick="scrollToSection('about-details')">
+              LEARN MORE
+              <span class="btn-arrow">↓</span>
+            </button>
+          </div>
+          <div class="hero-visual">
+            <div class="floating-elements">
+              <div class="element element-1"></div>
+              <div class="element element-2"></div>
+              <div class="element element-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-body" id="about-details">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-heading">MY JOURNEY</h2>
+            <p>
+              I recently completed my first year at the {{ site.education.school }}, where 
+              I'm pursuing {{ site.education.degree }}. I love sharing what I learn through 
+              technical blogs and tutorials, especially on topics like game development and 
+              developer tools.
+            </p>
+            <p>
+              Outside of academics and work, I'm an avid gamer—a hobby that often inspires my 
+              creative projects and deepens my interest in how technology shapes interactive experiences.
+            </p>
+          </div>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>CURRENT ROLE</h3>
+              <p>{{ site.current_role.title }} at {{ site.current_role.company }}</p>
+            </div>
+            <div class="stat-card">
+              <h3>EDUCATION</h3>
+              <p>{{ site.education.degree }} at {{ site.education.school }}</p>
+            </div>
+            <div class="stat-card">
+              <h3>PASSION</h3>
+              <p>Game Development & Interactive Experiences</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="content-section">
+      <div class="page-header">
+        <h1 class="page-title">SKILLS & EXPERTISE</h1>
+        <p class="page-subtitle">Technical arsenal for digital innovation</p>
+      </div>
+      
+      <div class="content-body">
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3 class="category-title">PROGRAMMING</h3>
+            <div class="skills-grid">
+              {% for skill in site.skills.programming %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3 class="category-title">GAME DEVELOPMENT</h3>
+            <div class="skills-grid">
+              {% for skill in site.skills.game_development %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3 class="category-title">WEB TECHNOLOGIES</h3>
+            <div class="skills-grid">
+              {% for skill in site.skills.web_technologies %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3 class="category-title">TOOLS</h3>
+            <div class="skills-grid">
+              {% for skill in site.skills.tools %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3 class="category-title">METHODOLOGIES</h3>
+            <div class="skills-grid">
+              {% for skill in site.skills.methodologies %}
+              <div class="skill-item">
+                <span class="skill-name">{{ skill }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+      <div class="page-header">
+        <h1 class="page-title">FEATURED PROJECTS</h1>
+        <p class="page-subtitle">Innovative solutions and creative implementations</p>
+      </div>
+      
+      <div class="content-body">
+        <div class="projects-grid">
+          <!-- Projects will be loaded dynamically -->
+          <div class="project-card" data-project="space-knights">
+            <div class="card-image">
+              <img src="https://images.pexels.com/photos/8751515/pexels-photo-8751515.jpeg" alt="Space Knights Items Shop" />
+              <div class="card-overlay">
+                <span class="view-project">VIEW PROJECT</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <span class="card-category">GAME DEVELOPMENT</span>
+              <h3 class="card-title">Space Knights Items Shop</h3>
+              <p class="card-preview">Space Knights is an upcoming Roblox game launching in late 2025, and I had the opportunity to develop...</p>
+              
+              <div class="card-tech">
+                <span class="tech-tag">Lua</span>
+                <span class="tech-tag">Roblox</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-project="one-suryan">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1685279576959-e710bffbfe05" alt="One Suryan Website" />
+              <div class="card-overlay">
+                <span class="view-project">VIEW PROJECT</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <span class="card-category">WEB DEVELOPMENT</span>
+              <h3 class="card-title">One Suryan Website</h3>
+              <p class="card-preview">As the Executive Director of Management for One Suryan, a student-led organization focused on empowering...</p>
+              
+              <div class="card-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card" data-project="game-engine">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1652619136719-2ddf8e849a71" alt="2D Game Engine" />
+              <div class="card-overlay">
+                <span class="view-project">VIEW PROJECT</span>
+              </div>
+            </div>
+            
+            <div class="card-content">
+              <span class="card-category">ENGINE DEVELOPMENT</span>
+              <h3 class="card-title">2D Game Engine</h3>
+              <p class="card-preview">A custom-built 2D game engine written in C++, designed from the ground up to handle core gameplay systems...</p>
+              
+              <div class="card-tech">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Physics</span>
+                <span class="tech-tag">Rendering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github" class="content-section">
+      <div class="page-header">
+        <h1 class="page-title">GITHUB REPOSITORIES</h1>
+        <p class="page-subtitle">Open source contributions and personal projects</p>
+      </div>
+      
+      <div class="content-body">
+        <div class="loading-container" id="github-loading">
+          <div class="modern-loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+          </div>
+          <p class="loading-text">LOADING REPOSITORIES...</p>
+        </div>
+        
+        <div class="repos-grid" id="repos-container" style="display: none;">
+          <!-- Repositories will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // Initialize particles
+  function createParticles() {
+    const container = document.getElementById('particles');
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      const types = ['●', '◆', '✦'];
+      particle.textContent = types[Math.floor(Math.random() * types.length)];
+      
+      const left = Math.random() * 100;
+      const delay = Math.random() * 20;
+      const duration = 15 + Math.random() * 10;
+      const size = 0.3 + Math.random() * 0.7;
+      const opacity = 0.2 + Math.random() * 0.5;
+      
+      particle.style.left = left + '%';
+      particle.style.animationDelay = delay + 's';
+      particle.style.animationDuration = duration + 's';
+      particle.style.transform = 'scale(' + size + ')';
+      particle.style.opacity = opacity;
+      
+      container.appendChild(particle);
+    }
+  }
+  
+  // Navigation functions
+  function toggleMenu() {
+    const menu = document.getElementById('dropdownMenu');
+    const overlay = document.getElementById('menuOverlay');
+    
+    menu.classList.toggle('menu-open');
+    if (menu.classList.contains('menu-open')) {
+      overlay.style.display = 'block';
+    } else {
+      overlay.style.display = 'none';
+    }
+  }
+  
+  function closeMenu() {
+    const menu = document.getElementById('dropdownMenu');
+    const overlay = document.getElementById('menuOverlay');
+    
+    menu.classList.remove('menu-open');
+    overlay.style.display = 'none';
+  }
+  
+  function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+    
+    // Update menu items
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.classList.remove('item-active');
+    });
+    
+    document.querySelector(`[data-section="${sectionId}"]`).classList.add('item-active');
+    
+    // Close menu
+    closeMenu();
+  }
+  
+  function scrollToSection(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  function contactMe() {
+    window.location.href = 'mailto:{{ site.social.email }}?subject=Portfolio Contact&body=Hi {{ site.author.name }}, I visited your portfolio and would like to connect...';
+  }
+  
+  // Load GitHub repositories
+  function loadGitHubRepos() {
+    fetch('https://api.github.com/users/{{ site.social.github }}/repos')
+      .then(response => response.json())
+      .then(data => {
+        const sortedRepos = data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const filteredRepos = sortedRepos.slice(0, -5);
+        displayRepos(filteredRepos);
+      })
+      .catch(error => {
+        console.error('Error fetching repos:', error);
+        document.getElementById('github-loading').innerHTML = '<p class="loading-text">Failed to load repositories</p>';
+      });
+  }
+  
+  function displayRepos(repos) {
+    const container = document.getElementById('repos-container');
+    const loading = document.getElementById('github-loading');
+    
+    container.innerHTML = repos.map(repo => `
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3 class="repo-name">${repo.name}</h3>
+          <div class="repo-stats">
+            <span class="stat">★ ${repo.stargazers_count}</span>
+            <span class="stat">⚡ ${repo.forks_count}</span>
+          </div>
+        </div>
+        
+        <p class="repo-description">
+          ${repo.description || 'No description available'}
+        </p>
+        
+        <div class="repo-footer">
+          ${repo.language ? `<span class="language-badge">${repo.language}</span>` : ''}
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="repo-link">
+            VIEW CODE →
+          </a>
+        </div>
+      </div>
+    `).join('');
+    
+    loading.style.display = 'none';
+    container.style.display = 'grid';
+  }
+  
+  // Initialize everything
+  document.addEventListener('DOMContentLoaded', function() {
+    createParticles();
+    
+    // Add menu item click handlers
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const section = this.getAttribute('data-section');
+        showSection(section);
+      });
+    });
+    
+    // Load GitHub repos when GitHub section is visible
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.id === 'github') {
+          loadGitHubRepos();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    observer.observe(document.getElementById('github'));
+  });
+</script>

@@ -1,0 +1,88 @@
+# Modern Xenon Portfolio - GitHub Pages Configuration
+title: "Nithilan Kumaran"
+description: "Software Engineer & Tech Innovator"
+email: nithilan.p.kumaran@gmail.com
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# Personal Information
+author:
+  name: "Nithilan Kumaran"
+  role: "Software Engineer"
+  bio: "Enterprise Business intern at Carrier, pursuing Computer Engineering at UW-Madison. Passionate about game development and innovative technology solutions."
+  
+# Social Links
+social:
+  github: sathariels
+  linkedin: nithilan-kumaran
+  medium: Sathariels
+  email: nithilan.p.kumaran@gmail.com
+
+# Current Role
+current_role:
+  title: "Enterprise Business Intern"
+  company: "Carrier"
+  
+# Education
+education:
+  degree: "Computer Engineering"
+  school: "University of Wisconsin–Madison"
+  
+# Skills Configuration
+skills:
+  programming: ["C++", "Python", "Java", "C#", "C", "Kotlin", "Lua"]
+  game_development: ["Unreal Engine", "Unity", "Godot", "Roblox Studio"]
+  web_technologies: ["React", "HTML", "CSS", "PHP"]
+  tools: ["Git", "VS Code", "JetBrains", "Blender", "Photoshop", "SAP"]
+  methodologies: ["Agile", "Jira", "Bash"]
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# GitHub Pages safe plugins
+safe: true
+incremental: false
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Theme settings
+theme_settings:
+  animations: true
+  particles: true
+  github_repos_limit: 8
+  projects_per_page: 6
