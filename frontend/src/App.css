@@ -9,8 +9,8 @@
 
 body {
   font-family: 'Kalam', cursive;
-  background: linear-gradient(135deg, #0a0a0b 0%, #1a1a1f 50%, #0a0a0b 100%);
-  color: #e8e6e3;
+  background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 50%, #faf9f7 100%);
+  color: #2d2d2d;
   overflow-x: hidden;
 }
 
