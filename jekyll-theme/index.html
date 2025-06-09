@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+<div class="app-container">
+  <!-- Cherry Blossoms -->
+  <div class="cherry-blossoms" id="cherry-blossoms"></div>
+  
+  <!-- Sidebar -->
+  {% include sidebar.html %}
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <div id="content-area">
+      <!-- About Section (Default) -->
+      {% include sections/about.html %}
+    </div>
+  </main>
+</div>
+
+<script>
+  // Cherry Blossom Animation
+  function createCherryBlossoms() {
+    const container = document.getElementById('cherry-blossoms');
+    const petalCount = 35;
+    
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.innerHTML = '🌸';
+      
+      const left = Math.random() * 100;
+      const delay = Math.random() * 15;
+      const duration = 12 + Math.random() * 8;
+      const size = 0.8 + Math.random() * 1.2;
+      const opacity = 0.6 + Math.random() * 0.4;
+      
+      petal.style.left = left + '%';
+      petal.style.animationDelay = delay + 's';
+      petal.style.animationDuration = duration + 's';
+      petal.style.transform = 'scale(' + size + ')';
+      petal.style.opacity = opacity;
+      
+      container.appendChild(petal);
+    }
+  }
+  
+  // Navigation functionality
+  function showSection(sectionName) {
+    const contentArea = document.getElementById('content-area');
+    
+    // Remove active class from all nav items
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('nav-item-active');
+    });
+    
+    // Add active class to clicked nav item
+    document.querySelector(`[data-section="${sectionName}"]`).classList.add('nav-item-active');
+    
+    // Load section content
+    fetch(`/sections/${sectionName}.html`)
+      .then(response => response.text())
+      .then(html => {
+        contentArea.innerHTML = html;
+        if (sectionName === 'github') {
+          loadGitHubRepos();
+        }
+      })
+      .catch(error => {
+        console.error('Error loading section:', error);
+      });
+  }
+  
+  // GitHub API integration
+  function loadGitHubRepos() {
+    fetch('https://api.github.com/users/{{ site.github_username }}/repos')
+      .then(response => response.json())
+      .then(data => {
+        const sortedRepos = data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const filteredRepos = sortedRepos.slice(0, -5);
+        displayRepos(filteredRepos);
+      })
+      .catch(error => {
+        console.error('Error fetching repos:', error);
+      });
+  }
+  
+  function displayRepos(repos) {
+    const reposGrid = document.getElementById('repos-grid');
+    if (!reposGrid) return;
+    
+    reposGrid.innerHTML = repos.map(repo => `
+      <div class="repo-card">
+        <div class="repo-header">
+          <h3 class="repo-name">${repo.name}</h3>
+          <div class="repo-stats">
+            <span class="stat">★ ${repo.stargazers_count}</span>
+            <span class="stat">⑃ ${repo.forks_count}</span>
+          </div>
+        </div>
+        <p class="repo-description">${repo.description || 'No description available'}</p>
+        <div class="repo-footer">
+          <div class="repo-language">
+            ${repo.language ? `<span class="language-tag">${repo.language}</span>` : ''}
+          </div>
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="repo-link">
+            View Code →
+          </a>
+        </div>
+      </div>
+    `).join('');
+  }
+  
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.mobile-overlay');
+    sidebar.classList.toggle('sidebar-mobile-open');
+    overlay.style.display = sidebar.classList.contains('sidebar-mobile-open') ? 'block' : 'none';
+  }
+  
+  // Initialize
+  document.addEventListener('DOMContentLoaded', function() {
+    createCherryBlossoms();
+    
+    // Add click handlers to navigation
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function() {
+        const section = this.getAttribute('data-section');
+        showSection(section);
+      });
+    });
+    
+    // Mobile menu handler
+    document.querySelector('.mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    document.querySelector('.mobile-overlay').addEventListener('click', toggleMobileMenu);
+  });
+</script>
