@@ -436,7 +436,7 @@ body {
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 2px solid rgba(139, 69, 19, 0.2);
   border-radius: 15px;
