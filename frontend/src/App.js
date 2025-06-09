@@ -161,7 +161,15 @@ const AboutMe = () => (
             where I'm expanding my experience in real-world development while continuing to 
             explore my passion for technology, programming, and problem-solving.
           </p>
-          <button className="learn-more-btn">
+          <button 
+            className="learn-more-btn"
+            onClick={() => {
+              const aboutSection = document.querySelector('.content-body');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             LEARN MORE
             <span className="btn-arrow">↓</span>
           </button>
